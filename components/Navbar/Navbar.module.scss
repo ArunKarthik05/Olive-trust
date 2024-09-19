@@ -2,14 +2,14 @@
 @import "/styles/variables.scss";
 
 .nav{
-    margin:1vh 5vh 0 5vh;
+    margin:1vh 5vw 0 5vw;
     @extend .flexRow !optional;
     justify-content: space-between;
     align-items: center;
 
     .logo{
-        height: 50px;
-        width: 50px;
+        height: 54px;
+        width: 54px;
         background-color: black;
         border-radius: 50%;
         margin-left: 1rem;
@@ -24,7 +24,7 @@
         @extend .flexRow !optional;
         gap: 1rem;
         p{
-            padding: 1rem 2rem;
+            padding:1rem  2rem;
             border-radius: 3rem;
         }
     }
@@ -39,4 +39,5 @@
 }
 .active{
     font-weight: bold;
+    background-color: #D9D9D9;
 }

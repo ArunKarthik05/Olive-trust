@@ -1,9 +1,9 @@
 @import "/styles/app.scss";
 
 .main{
-    height: 100vh;
+    height: fit-content;
     .content{
-        padding-top: 10vh;
+        padding-top: 20vh;
         @extend .flexCol !optional;
         align-items: center;
         text-align: center;
@@ -15,6 +15,63 @@
             margin-top: 2rem;
             @extend .iconBtn !optional;
             width: fit-content;
+        }
+    }
+
+    .imagesDiv{
+        margin: 0 5vw;
+        min-height: 60vh;
+        @extend .flexRow !optional;
+        justify-content: space-between;
+        .mainImgDiv{
+            height: 60vh;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            justify-content: flex-end;
+            .greenDiv{
+                background-color: $color-light-green;
+                border-radius: 1rem;
+                @extend .imgContainer !optional;
+            }
+            .img1{
+                @extend .greenDiv !optional;
+                border-radius: 3rem;
+                height: 295px;
+            }
+            .img2{
+                @extend .greenDiv !optional;
+                height: 30%;
+                width:100%;
+            }
+            .img3{
+                @extend .greenDiv !optional;
+                height: 60%;
+            }
+            .img4{
+                @extend .greenDiv !optional;
+                height: 80%;
+            }
+            &:nth-child(1){
+                align-self: flex-end;
+            }
+            &:nth-child(2){
+                align-self: flex-end;
+            }
+            &:nth-child(3){
+                align-self: center;
+            }
+            &:nth-child(4){
+                align-self: flex-start;
+            }
+
+        }
+        .grayContainer{
+            background-color: $color-gray;
+            height: 52px;
+            width: 100%;
+            border-radius: 3rem;
         }
     }
 }

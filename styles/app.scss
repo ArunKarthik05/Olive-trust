@@ -11,15 +11,28 @@
 }
 .heading{
     font-size: 48px;
+    font-weight: 700;
+}
+.subHeading{
+    font-size: 36px;
+    font-weight: 700;
 }
 .svgContainer{
     background-color: white;
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     @extend .flexCol !optional;
     align-items: center;
     justify-content: center;
+}
+.imgContainer{
+    overflow: hidden;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }
 .iconBtn{
     background-color: $color-primary;

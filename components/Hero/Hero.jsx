@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./Hero.module.scss";
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -17,6 +18,26 @@ export default function Hero() {
                       </svg>
                     </div>
                 </button>
+              </div>
+          </div>
+
+          {/* images */}
+          <div className={styles.imagesDiv}>
+              <div className={styles.mainImgDiv}>
+                <div className={styles.img1}><Image src="/hero-1.jpeg" alt='hero-section' height={304} width={295}/></div>
+                <div className={styles.grayContainer}></div>
+              </div>
+              <div className={styles.mainImgDiv}>
+                  <div className={styles.grayContainer}></div>
+                  <div className={styles.img2}></div>
+              </div>
+              <div className={styles.mainImgDiv}>
+                  <div className={styles.img3}></div>
+                  <div className={styles.grayContainer}></div>
+              </div>
+              <div className={styles.mainImgDiv}>
+                  <div className={styles.grayContainer}></div>
+                  <div className={styles.img4}></div>
               </div>
           </div>
     </div>
