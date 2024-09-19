@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import styles from "./page.module.scss";
+import Hero from "@/components/Hero/Hero";
 
 export default async function Home() {
   const navItems = [
@@ -13,7 +14,9 @@ export default async function Home() {
   return (
     <div className={styles.page}>
       <Navbar navItems={navItems} />
-      <section></section>
+      <section>
+        <Hero/>
+      </section>
     </div>
   );
 }
