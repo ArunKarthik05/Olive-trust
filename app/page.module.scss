@@ -1,6 +1,22 @@
+@import "/styles/variables.scss";
+
 .page{
     section{
         min-height: 100vh;
         margin-bottom: 20vh;
     }
 }
+
+.custom{
+    position: fixed;
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    background: $color-primary;
+    border: 1px solid $color-primary; 
+    backdrop-filter: blur(2px); 
+    pointer-events: none; 
+    transform: translate(-50%, -50%); 
+    transition: all 0.1s ease; 
+    z-index: 9999;
+  }

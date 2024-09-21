@@ -29,11 +29,11 @@
         }
     }
     background-color: $color-secondary;
-    padding: 1rem 0;
+    padding: .5rem .5rem .5rem 0;
     border-radius: 3rem;
 
     .contactUs{
-        margin-right: 1rem;
+        float: right;
         @extend .iconBtn !optional;
     }
 }

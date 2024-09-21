@@ -14,7 +14,7 @@ export default function Hero() {
                 <button className={styles.donateBtn}>Donate Now
                     <div className={styles.svgContainer}>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1.34312 12.6569L12.6568 1.34317M12.6568 1.34317V9.82845M12.6568 1.34317H4.17154" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M1.34312 12.6569L12.6568 1.34317M12.6568 1.34317V9.82845M12.6568 1.34317H4.17154" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
                     </div>
                 </button>
@@ -24,7 +24,7 @@ export default function Hero() {
           {/* images */}
           <div className={styles.imagesDiv}>
               <div className={styles.mainImgDiv}>
-                <div className={styles.img1}><Image src="/hero-1.jpeg" alt='hero-section' height={304} width={295}/></div>
+                <div className={styles.img1}><Image src="/hero-1.jpeg" alt='hero-section' height={304} width={295} priority/></div>
                 <div className={styles.grayContainer}></div>
               </div>
               <div className={styles.mainImgDiv}>
