@@ -11,7 +11,7 @@
     .statDiv{
         background-color: #F5F5F5;
         border:1px solid $color-gray;
-        margin:10vh 5vw 0 5vw;
+        margin-top:10vh;
         border-radius: 1rem;
         @extend .flexRow !optional;
         justify-content: space-between;
@@ -50,7 +50,7 @@
 
     .gridWrapper{
       @extend .flexRow !optional;
-      gap: 2rem;
+      gap: 5rem;
       overflow-x: hidden;
       scroll-snap-type: x mandatory; 
       &::-webkit-scrollbar{

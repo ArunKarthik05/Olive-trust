@@ -10,7 +10,7 @@ export default function Stat() {
 
     const handleNext = () => {
         if (activeMission < missionsData.missions.length - 1) {
-            scrollContainer.current.scrollBy({ left: 500, behavior: 'smooth' });
+            scrollContainer.current.scrollBy({ left: 1200, behavior: 'smooth' });
             setActiveMission(activeMission + 1);
         }
     };
@@ -106,5 +106,3 @@ export default function Stat() {
     </div>
   )
 }
-
-

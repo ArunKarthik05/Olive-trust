@@ -1,0 +1,84 @@
+@import "/styles/app.scss";
+@import "/styles/variables.scss";
+
+.goals{
+    .upperContent{
+        position: relative;
+        .bottom{
+            width: 70%;
+            position: absolute;
+            bottom: 0;
+            left:15%;
+            z-index: 99;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: black;
+            backdrop-filter: blur(2px);
+            padding: 2rem;
+            border-top-right-radius: 1rem;
+            border-top-left-radius: 1rem;
+            text-align: center;
+            h1{
+                padding-bottom: 1rem;
+            }
+            p{
+                width: 80%;
+                text-align: center;
+                margin: auto;
+                line-height: 1.5;
+                span{
+                    color: red;
+                }
+            }
+        }
+    }
+    .scrollContainer{
+        @extend .flexRow !optional;
+        gap: 10vw;
+        background-color: gray;
+        height: 70vh;
+        border-radius: 3rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-snap-type: x mandatory;
+
+        .imgContainer{
+            scroll-snap-align: start;
+            height: 100%;
+            min-width: 100%;
+            img{
+                object-position: center 70%;
+               object-fit: cover; 
+            }
+        }
+        .imgContainer:nth-child(2){
+            img{
+                object-position: center 40%;
+            }
+        }
+    }
+
+    .hospital{
+        margin-top: 20vh;
+        @extend .flexRow !optional;
+        justify-content: space-between;
+
+        .content{
+            width: 50%;
+            @extend .flexCol !optional;
+            h1{
+                text-align: center;
+                // margin: auto;
+            }
+            p{
+                margin: auto;
+                line-height: 2;
+            }
+        }
+
+        .imgContainer{
+            height: 60vh;
+            width: 500px;
+            border-radius: 1rem;
+        }
+    }
+}
