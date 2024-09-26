@@ -49,6 +49,13 @@ export default function Goals() {
         <div className={styles.content}>
           <h1 className={styles.subHeading}>Our Vision for HealthCare</h1>
           <p>At Olive charity trust, we are committed to transforming healthcare access for rural and underserved communities. Our mission is to build a fully-equipped hospital in rural areas, where quality medical care is often unavailable. This hospital will provide essential healthcare services, including maternal care, emergency treatment, and preventive health programs, ensuring that even the most marginalized have access to life-saving treatments. We believe that good health is a fundamental right, and through this initiative, we strive to bridge the healthcare gap for the poor. Join us in creating a healthier, more equitable future for all.</p>
+          <button className={styles.donateBtn}>Donate Now
+            <div className={styles.svgContainer}>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.34312 12.6569L12.6568 1.34317M12.6568 1.34317V9.82845M12.6568 1.34317H4.17154" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+        </button>
         </div>
         <div className={styles.imgContainer}><Image src="/hos-2.avif" alt='hospital-interior' height={500} width={828}/></div>
       </div>

@@ -5,13 +5,15 @@ import styles from "./page.module.scss";
 import Hero from "@/components/Hero/Hero";
 import Stat from "@/components/Stat/Stat";
 import Goals from '@/components/Goals/Goals';
+import Trustees from '@/components/Trustees/Trustees';
+import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
   const navItems = [
     { name: "Home", link: "" },
     { name: "Get Involved", link: "" },
-    { name: "Donate", link: "" },
-    { name: "Impact Areas", link: "" },
+    { name: "Mission", link: "" },
+    { name: "Goals", link: "" },
     { name: "Success Stories", link: "" },
   ];
 
@@ -80,15 +82,25 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Navbar navItems={navItems} />
-      <section>
-        <Hero />
-      </section>
-      <section>
-        <Stat />
-      </section>
-      <section>
-        <Goals />
-      </section>
+
+      <main>
+        <section>
+          <Hero />
+        </section>
+        <section>
+          <Stat />
+        </section>
+        <section>
+          <Goals />
+        </section>
+        <section>
+          <Trustees/>
+        </section>
+      </main>
+      
+      <footer>
+        <Footer navItems={navItems}/>
+      </footer>
     </div>
   );
 }

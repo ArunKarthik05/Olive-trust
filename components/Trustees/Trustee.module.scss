@@ -1,0 +1,88 @@
+@import "/styles/app.scss";
+@import "/styles/variables.scss";
+
+.main{
+    text-align: center;
+    .trustee1,.trustee2{
+        margin: 10vh 10vw 0 10vw;
+        @extend .flexRow !optional;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10vw;
+    }
+    .trustee2{
+        flex-direction: row-reverse;
+    }
+    .quoteContainer{
+        position: relative;
+        width: fit-content;
+        .imgContainer{
+            height: 334px;
+            width: 334px;
+            border-radius: 50%;
+            position: relative;
+            z-index: 9;
+            overflow: hidden;
+            @extend .imgContainer !optional;
+            img{
+                object-fit: cover;
+            }
+        
+            @include respond-to(medium){
+                width: 250px;
+                height: 250px;
+                margin-left: 0;
+            }
+            @include respond-to(mobiles){
+                width: 200px;
+                height: 200px;
+                margin-left: 0;
+            }
+        }
+        .quoteOpening{
+            position: absolute;
+            top: 0;
+            right:5%;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background: white;
+            z-index: 10;
+            @extend .flexCol !optional;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 2px;
+            .svgContainer{
+                position: absolute;
+                bottom: 8px;
+                height: 70px;
+                width:70px;
+                border-radius: inherit;
+                background-color: $color-primary;
+            }
+            p,svg{
+                color:black;
+                font-size: 32px;
+            }
+        }
+    }
+
+    .content{
+        min-height: 334px;
+        text-align: left;   
+        .voice{
+            margin-top: 10%;
+            color: #808080;
+            line-height: 1.5;
+        }
+        .name{
+            margin-top: 10%;
+            color: black;
+            font-weight: 500;
+        }
+        .position{
+            margin-top: 1rem;
+            color: #808080;
+        }
+    }
+}

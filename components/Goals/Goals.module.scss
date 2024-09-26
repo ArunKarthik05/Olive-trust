@@ -65,6 +65,7 @@
         .content{
             width: 50%;
             @extend .flexCol !optional;
+            align-items: center;
             h1{
                 text-align: center;
                 // margin: auto;
@@ -79,6 +80,10 @@
             height: 60vh;
             width: 500px;
             border-radius: 1rem;
+        }
+        .donateBtn{
+            @extend .iconBtn !optional;
+            width: fit-content;
         }
     }
 }

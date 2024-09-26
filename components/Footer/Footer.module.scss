@@ -1,0 +1,43 @@
+@import "/styles/app.scss";
+@import "/styles/variables.scss";
+
+.footer{
+    background-color:#D1F39D;
+    border-radius: 3rem;
+    padding: 3rem;
+    margin: 0 10vw;
+    @extend .flexRow !optional;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    .item{
+        @extend .flexCol !optional; 
+        gap: 2rem;
+    }
+    .logo{
+        display: inline-flex;
+        gap: 1rem;
+    }
+    .itemsWrapper{
+        @extend .flexRow !optional;
+        gap:1rem;
+    }
+    .contact{
+        @extend .flexRow !optional; 
+        gap: 2rem;
+        p{
+            position: relative;
+            padding-right: 1rem;
+            border-right:3px solid #FF17DA;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .item:nth-child(1){
+        width: 30%;
+    }
+    .contactUs{
+        float: right;
+        @extend .iconBtn !optional;
+    }
+}
