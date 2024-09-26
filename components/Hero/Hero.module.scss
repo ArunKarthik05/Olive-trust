@@ -52,6 +52,13 @@
             .img4{
                 @extend .greenDiv !optional;
                 height: 80%;
+                display: flex;
+                justify-content: center;
+                img{
+                    height: 70%;
+                    width: 80%;
+                    object-fit: contain;
+                }
             }
             &:nth-child(1){
                 align-self: flex-end;

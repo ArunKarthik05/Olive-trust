@@ -3,17 +3,19 @@
 
 .goals{
     .upperContent{
+        width: 70vw;
+        margin: auto;
         position: relative;
         .bottom{
-            width: 70%;
+            width: 80%;
             position: absolute;
             bottom: 0;
-            left:15%;
+            left:7%;
             z-index: 99;
             background-color: rgba(255, 255, 255, 0.5);
             color: black;
             backdrop-filter: blur(2px);
-            padding: 2rem;
+            padding: 1rem;
             border-top-right-radius: 1rem;
             border-top-left-radius: 1rem;
             text-align: center;
@@ -21,7 +23,7 @@
                 padding-bottom: 1rem;
             }
             p{
-                width: 80%;
+                width: 90%;
                 text-align: center;
                 margin: auto;
                 line-height: 1.5;
@@ -34,7 +36,6 @@
     .scrollContainer{
         @extend .flexRow !optional;
         gap: 10vw;
-        background-color: gray;
         height: 70vh;
         border-radius: 3rem;
         overflow-x: hidden;
@@ -46,7 +47,7 @@
             height: 100%;
             min-width: 100%;
             img{
-                object-position: center 70%;
+                // object-position: center 30%;
                object-fit: cover; 
             }
         }

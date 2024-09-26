@@ -24,7 +24,7 @@ export default function Hero() {
           {/* images */}
           <div className={styles.imagesDiv}>
               <div className={styles.mainImgDiv}>
-                <div className={styles.img1}><Image src="/hero-1.jpeg" alt='hero-section' height={304} width={295} priority/></div>
+                <div className={styles.img1}><Image src="/assets/hero-1.png" alt='hero-section' height={304} width={295} priority/></div>
                 <div className={styles.grayContainer}></div>
               </div>
               <div className={styles.mainImgDiv}>
@@ -37,7 +37,9 @@ export default function Hero() {
               </div>
               <div className={styles.mainImgDiv}>
                   <div className={styles.grayContainer}></div>
-                  <div className={styles.img4}></div>
+                  <div className={styles.img4}>
+                    <Image src="/assets/hero-2.png" alt='hero-section-4' height={75} width={828} priority/>
+                  </div>
               </div>
           </div>
     </div>

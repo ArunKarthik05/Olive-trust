@@ -3,11 +3,12 @@ import styles from "./Goals.module.scss";
 import Image from 'next/image';
 
 export default function Goals() {
+  const images = ["hospital-1.png","hospital-2.jpeg","college-1.png","college-2.png"]
   const [activeContainer, setActiveContainer] = useState(0); 
   const scrollContainer = useRef(null);
 
   const handleNext = () => {
-    if (activeContainer < 2 ) {
+    if (activeContainer < 3 ) {
         scrollContainer.current.scrollBy({ left: 1000, behavior: 'smooth' });
         setActiveContainer(activeContainer + 1);
     }else{
@@ -30,13 +31,12 @@ export default function Goals() {
     <div className={styles.goals}>
       <div className={styles.upperContent}>
         <div className={styles.scrollContainer} ref={scrollContainer}>
-          <div className={styles.imgContainer}>
-            <Image src="/hospital.jpg" alt="college-plan" height={75} width={828}/> 
+          {images.map((img,i)=>(
+          <div className={styles.imgContainer} key={i}>
+            <Image src={`/assets/${img}`} alt={img} height={75} width={828}/> 
           </div>
-          <div className={styles.imgContainer}>
-            <Image src="/college.jpg" alt="college-plan" height={75} width={828}/> 
-          </div>
-          <div className={styles.item}></div>
+          ))}
+          {/* <div className={styles.item}></div> */}
         </div>
         <div className={styles.bottom}>
             <h1 className={styles.heading}>Goals and Objectives</h1>
@@ -57,7 +57,7 @@ export default function Goals() {
             </div>
         </button>
         </div>
-        <div className={styles.imgContainer}><Image src="/hos-2.avif" alt='hospital-interior' height={500} width={828}/></div>
+        <div className={styles.imgContainer}><Image src="/assets/hospital.png" alt='hospital-interior' height={500} width={828}/></div>
       </div>
     </div>
   )
