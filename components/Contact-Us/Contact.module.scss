@@ -1,0 +1,32 @@
+@import "/styles/app.scss";
+@import "/styles/variables.scss";
+
+.contact{
+    position: relative;
+    text-align: center;
+    .letter{
+        display: inline-block;
+        font-size: 200px;
+        font-weight: 500;
+    }
+
+    .glassyDiv{
+        position: absolute;
+        top: 25%;
+        left: 35%;
+        padding: 1rem 3rem;
+        background-color: transparent;
+        backdrop-filter: blur(15px);
+        border-radius: 1rem;
+        border: 1px solid gray;
+        color: rgb(10, 199, 10);
+        font-weight: bold;
+        p{
+            padding: .5rem 0;
+        }
+    }
+
+    .contactUs{
+
+    }
+}

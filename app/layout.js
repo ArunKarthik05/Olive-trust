@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google"; 
 import "./globals.css";
+import LenisScroll from "@/lenis/SmoothScroll";
+
 
 const inter = Inter({
   subsets: ["latin"], 
@@ -15,7 +17,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable}`}>
-        {children}
+       {/* <LenisScroll>{children}</LenisScroll> */}
+       {children}
       </body>
     </html>
   );

@@ -7,6 +7,7 @@ import Stat from "@/components/Stat/Stat";
 import Goals from '@/components/Goals/Goals';
 import Trustees from '@/components/Trustees/Trustees';
 import Footer from '@/components/Footer/Footer';
+import Contact from '@/components/Contact-Us/Contact';
 
 export default function Home() {
   const navItems = [
@@ -92,6 +93,9 @@ export default function Home() {
         </section>
         <section>
           <Goals />
+        </section>
+        <section>
+          <Contact/>
         </section>
         <section>
           <Trustees/>
