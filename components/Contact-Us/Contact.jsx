@@ -8,7 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
     const headingRef = useRef(null);
-    const glassyDivRef = useRef(null); // Reference for the glassy div
+    const glassyDivRef = useRef(null); 
+    const contactUsRef = useRef(null);
 
 
     useEffect(() => {
@@ -36,7 +37,7 @@ export default function Contact() {
             );
         });
 
-        timeline.fromTo(glassyDivRef.current, 
+        timeline.fromTo( [glassyDivRef.current, contactUsRef.current],
             { y: 200, opacity: 0 }, // Starting position (coming from below)
             { 
                 y: 0, 
@@ -70,7 +71,16 @@ export default function Contact() {
                     <p>Pavoochatram,Tenkasi,TamilNadu</p>
             </div>
 
-            <div className={styles.contactUs}>
+            <div className={styles.contactUs} ref={contactUsRef}>
+                <div className={styles.left}>
+                    <div className={styles.row1}>
+                        <div>Name</div>
+                        <div>Email</div>
+                        <div>Phone</div>
+                    </div>
+                    <div className={styles.row2}>Message</div>
+                </div>
+                <div className={styles.right}>Send</div>
             </div>
         </div>
     );
