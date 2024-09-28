@@ -62,7 +62,7 @@
             .img1{
                 @extend .greenDiv !optional;
                 border-radius: 3rem;
-                height: 295px;
+                height: 80%;
             }
             .img2{
                 @extend .greenDiv !optional;
@@ -103,6 +103,9 @@
             height: 52px;
             width: 100%;
             border-radius: 3rem;
+            @include respond-to(mobiles){
+                height: 30px;
+            }
         }
     }
 }
