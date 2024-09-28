@@ -15,11 +15,11 @@ export default function Contact() {
         const letters = headingRef.current.querySelectorAll("div"); 
         const timeline = gsap.timeline({
             scrollTrigger: {
-                trigger: headingRef.current, // The element that triggers the animation
-                start: "top 70%", // When to start the animation
-                end: "bottom 20%", // When to end the animation
-                scrub: true, // Smooth scrubbing
-                markers: false, // Disable markers for debugging
+                trigger: headingRef.current, 
+                start: "top 70%", 
+                end: "bottom 20%", 
+                scrub: true, 
+                markers: false,
             }
         });
 

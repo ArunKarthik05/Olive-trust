@@ -1,5 +1,6 @@
 @import "/styles/app.scss";
 @import "/styles/variables.scss";
+@import "/styles/mixins.scss";
 
 .goals{
     .upperContent{
@@ -50,6 +51,9 @@
                 // object-position: center 30%;
                object-fit: cover; 
             }
+            @include respond-to(mobiles){
+                margin: auto;
+            }
         }
         .imgContainer:nth-child(2){
             img{
@@ -62,14 +66,22 @@
         margin-top: 20vh;
         @extend .flexRow !optional;
         justify-content: space-between;
+        @include respond-to(mobiles){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
         .content{
             width: 50%;
             @extend .flexCol !optional;
             align-items: center;
+            @include respond-to(mobiles){
+                width: 90%;
+                padding: 0 1rem;
+            }
             h1{
                 text-align: center;
-                // margin: auto;
             }
             p{
                 margin: auto;
@@ -81,6 +93,9 @@
             height: 60vh;
             width: 500px;
             border-radius: 1rem;
+            @include respond-to(mobiles){
+                width: 80vw;
+            }
         }
         .donateBtn{
             @extend .iconBtn !optional;

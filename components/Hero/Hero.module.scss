@@ -2,14 +2,24 @@
 
 .main{
     height: fit-content;
+
     .content{
         padding-top: 20vh;
         @extend .flexCol !optional;
         align-items: center;
         text-align: center;
+
+        @include respond-to(mobiles){
+            padding: 0;
+            justify-content: center;
+            min-height: 90vh;
+        }
         p{
             padding-top: 1rem;
             line-height: 1.5;
+            @include respond-to(mobiles){
+               padding-top: 2rem;
+            }
         }
         .donateBtn{
             margin-top: 2rem;
@@ -23,6 +33,11 @@
         min-height: 60vh;
         @extend .flexRow !optional;
         justify-content: space-between;
+        @include respond-to(mobiles){
+            min-height: 30vh;
+            gap:2vw;
+
+        }
         .mainImgDiv{
             height: 60vh;
             width: 20%;
@@ -30,10 +45,19 @@
             flex-direction: column;
             gap: .5rem;
             justify-content: flex-end;
+
+            @include respond-to(mobiles){
+                height: 30vh;
+                width: 24vw;
+                border-radius: 1px;
+            }
             .greenDiv{
                 background-color: $color-light-green;
                 border-radius: 1rem;
                 @extend .imgContainer !optional;
+                @include respond-to(mobiles){
+                    border-radius: 1rem !important;
+                }
             }
             .img1{
                 @extend .greenDiv !optional;

@@ -15,3 +15,9 @@ body {
 body {
   cursor: none; 
 }
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto; /* Show the cursor on mobile */
+  }
+}

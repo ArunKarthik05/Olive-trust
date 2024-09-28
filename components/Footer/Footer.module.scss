@@ -1,5 +1,6 @@
 @import "/styles/app.scss";
 @import "/styles/variables.scss";
+@import "/styles/mixins.scss";
 
 .footer{
     background-color:#D1F39D;
@@ -10,6 +11,13 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+
+    @include respond-to(medium){
+        display: flex;
+        flex-direction: column;
+        margin: 0 5vw;
+    }
+
     .item{
         @extend .flexCol !optional; 
         gap: 2rem;
@@ -21,20 +29,34 @@
     .itemsWrapper{
         @extend .flexRow !optional;
         gap:1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .contact{
         @extend .flexRow !optional; 
         gap: 2rem;
+        @include respond-to(medium){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         p{
             position: relative;
             padding-right: 1rem;
             border-right:3px solid #FF17DA;
             display: flex;
             align-items: center;
+            @include respond-to(medium){
+                border-bottom:1px solid #FF17DA;
+                border-right: none;
+            }
         }
     }
     .item:nth-child(1){
         width: 30%;
+        @include respond-to(medium){
+            width: 90%;
+        }
     }
     .contactUs{
         float: right;

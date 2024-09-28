@@ -1,5 +1,6 @@
 @import "./mixins.scss";
 @import "./variables.scss";
+@import "./mixins.scss";
 
 .flexRow{
     display: flex;
@@ -12,6 +13,9 @@
 .heading{
     font-size: 48px;
     font-weight: 700;
+    @include respond-to(mobiles){
+        font-size: 32px;
+    }
 }
 .subHeading{
     font-size: 36px;

@@ -1,9 +1,13 @@
 @import "/styles/variables.scss";
+@import "/styles/mixins.scss";
 
 .page{
     section{
         min-height: 100vh;
         margin: 0 5vw 20vh 5vw;
+        @include respond-to(mobiles){
+            margin: 0 1vw 20vh 1vw;
+        }
     }
 }
 
@@ -19,4 +23,7 @@
     transform: translate(-50%, -50%); 
     transition: all 0.1s ease; 
     z-index: 9999;
+    @include respond-to(mobiles){
+        display: hidden;
+    }
   }

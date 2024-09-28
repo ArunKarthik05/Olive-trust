@@ -1,11 +1,27 @@
 @import "/styles/app.scss";
 @import "/styles/variables.scss";
+@import "/styles/mixins.scss";
 
 .nav{
     margin:1vh 5vw 0 5vw;
     @extend .flexRow !optional;
     justify-content: space-between;
     align-items: center;
+    background-color: #D1F39D;
+    box-shadow: 0 7px 10px 2px rgba(114, 114, 114, 0.5);
+
+    @include respond-to(medium){
+        margin: .5rem 1rem;
+    }
+    .mobileLogo{
+        display: flex;
+        align-items: center;
+        gap:1rem;
+    }
+    .mobileText{
+        float: left;
+        font-weight: 600;
+    }
 
     .logo{
         height: 54px;
@@ -17,6 +33,9 @@
         @extend .flexRow !optional;
         justify-content: center;
         align-items: center;
+        @include respond-to(mobiles){
+            background-color: transparent;
+        }
     }
 
     .itemsWrapper{
@@ -27,17 +46,23 @@
             padding:1rem  2rem;
             border-radius: 3rem;
         }
+        @include respond-to(medium){
+            display: none;
+        }
     }
-    background-color: $color-secondary;
     padding: .5rem .5rem .5rem 0;
     border-radius: 3rem;
 
     .contactUs{
         float: right;
         @extend .iconBtn !optional;
+        @include respond-to(mobiles){
+            float: none;
+        }
     }
 }
 .active{
     font-weight: bold;
-    background-color: #D9D9D9;
+    background-color: rgb(204, 204, 204);
+
 }

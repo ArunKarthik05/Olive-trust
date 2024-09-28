@@ -1,5 +1,6 @@
 @import "/styles/app.scss";
 @import "/styles/variables.scss";
+@import "/styles/mixins.scss";
 
 .contact{
     position: relative;
@@ -8,6 +9,9 @@
         display: inline-block;
         font-size: 200px;
         font-weight: 500;
+        @include respond-to(medium){
+            font-size: 32px;
+        }
     }
 
     .glassyDiv{
@@ -24,6 +28,15 @@
         p{
             padding: .5rem 0;
         }
+
+        @include respond-to(mobiles){
+           position: relative;
+           display: block;
+           place-items: center;
+           left: 0;
+           width: fit-content;
+           margin: auto;
+        }
     }
 
     .contactUs{
@@ -32,21 +45,42 @@
         @extend .flexRow !optional;
         gap:1rem;
         height: 50vh;
+
+        @include respond-to(mobiles){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap:1rem;
+            height: fit-content;
+        }
         div{
             border-radius: 1rem;
         }
         .left{
             width: 80%;
             height: 100%;
+            @include respond-to(mobiles){
+                height: auto;
+                margin: auto;
+            }
 
             .row1{
                 width: 100%;
                 @extend .flexRow !optional;
                 gap:2%;
                 height: 20%;
+                @include respond-to(mobiles){
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap:1rem;
+                }
                 div{
                     background-color: #D9D9D9;
                     width: 33%;
+                    @include respond-to(mobiles){
+                        width: 100%;
+                    }
                 }
             }
             .row2{
@@ -54,6 +88,14 @@
                 height: 75%;
                 background-color: #D9D9D9;
                 width: 100%;
+            }
+            .row1,.row2{
+                @include respond-to(mobiles){
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 100%;
+                }
             }
         }
         .right{
@@ -69,6 +111,11 @@
                 p{
                     padding-top: 2rem;
                 }
+            }
+            @include respond-to(mobiles){
+               width: 80%;
+               margin: auto;
+               padding: 1rem 0;
             }
         }
         textarea,input{
