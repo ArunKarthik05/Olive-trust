@@ -2,6 +2,8 @@
 import React, { useState,useRef } from 'react'
 import styles from "./Stat.module.scss";
 import { missionsData } from '@/data/Missions';
+import Image from 'next/image';
+
 export default function Stat() {
     const [activeMission,setActiveMission] = useState(0);
     const missionRefs = useRef([]);
@@ -31,16 +33,17 @@ export default function Stat() {
     
         <div className={styles.statDiv}>
             <div className={styles.innerContainer}>
-                <h1>85%</h1>
-                <p>Three Line Text</p>
+                <h1>100+</h1>
+                <p>Providing safe housing and support for over 100 families in need.</p>
             </div>
             <div className={styles.innerContainer}>
-                <h1>3,250</h1>
-                <p>Three Line Text</p>
+                <h1>300+</h1>
+                <p>Improving health and well-being by treating over 300 individuals with free medical care.</p>
+                
             </div>
             <div className={styles.innerContainer}>
-                <h1>69%</h1>
-                <p>Three Line Text</p>
+                <h1>500+</h1>
+                <p>Empowering the future by offering education to more than 500 underprivileged children.</p>
             </div>
         </div>
 
@@ -96,10 +99,15 @@ export default function Stat() {
                 </div>
 
                 {/* images */}
+                {missionsData.missions[activeMission].images.map((img,i)=>(
+                    <div className={styles.gridItem} key={i}>
+                        <Image src={img} alt={missionsData.missions[activeMission].mission} height={300} width={300}/>
+                    </div>
+                ))}
+{/*                 
                 <div className={styles.gridItem}></div>
                 <div className={styles.gridItem}></div>
-                <div className={styles.gridItem}></div>
-                <div className={styles.gridItem}></div>
+                <div className={styles.gridItem}></div> */}
             </div>
             ))}
         </div>

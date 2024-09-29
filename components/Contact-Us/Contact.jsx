@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'; 
 import styles from "./Contact.module.scss";
@@ -9,6 +9,13 @@ export default function Contact() {
     const headingRef = useRef(null);
     const glassyDivRef = useRef(null); 
     const contactUsRef = useRef(null);
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = (e) => {
+    //   navigator.clipboard.writeText(e.target.value).then(() => {
+    //     setCopied(true);
+    //     setTimeout(() => setCopied(false), 2000); 
+      };    // const [copied, setCopied] = useState(false);
 
 
     useEffect(() => {
@@ -65,7 +72,7 @@ export default function Contact() {
 
             <div className={styles.glassyDiv} ref={glassyDivRef}>
                 <p>Olive Org</p>
-                <p>+91 93484039378</p>
+                <p onClick={handleCopy}>+91 93484039378</p>
                 <p>oliveorg@gmail.com</p>
                 <p>Pavoochatram,Tenkasi,TamilNadu</p>
             </div>

@@ -30,6 +30,9 @@
                 border-radius: 1rem;
                 width: fit-content;
             }
+            p{
+              width: 50%;
+            }
         }
     }
 
@@ -71,9 +74,11 @@
       border-radius: 1rem;
     
       .gridItem {
+        // height: ;
         background-color: #ccc;
         border-radius: 1rem;
         position: relative;
+        @extend .imgContainer !optional;
 
         .content{
           padding-top: 10%;

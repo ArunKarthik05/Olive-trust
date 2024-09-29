@@ -15,15 +15,14 @@
     }
 
     .glassyDiv{
-        position: absolute;
-        top: 10%;
-        left: 35%;
+        cursor: pointer;
+        width: fit-content;
+        margin: auto;
         padding: 1rem 3rem;
         background-color: transparent;
         backdrop-filter: blur(15px);
         border-radius: 1rem;
-        border: 1px solid gray;
-        color: $color-primary;
+        background-color: $color-primary;
         font-weight: bold;
         p{
             padding: .5rem 0;

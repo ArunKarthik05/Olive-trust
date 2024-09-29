@@ -4,7 +4,7 @@ export const missionsData = {
       mission: "Medical Camps",
       content: "Providing essential healthcare services and free medications to underprivileged communities, ensuring access to quality medical care for those in need.",
       video: "",
-      images: ["imagepath-1", "imagepath-2", "imagepath-3", "imagepath-4"]
+      images: ["/Medical/medicals-1.jpeg", "/Medical/medicals-2.jpeg", "/Medical/medicals-3.jpeg", "/Medical/medicals-4.jpeg"]
     },
     {
       mission: "Annatham",

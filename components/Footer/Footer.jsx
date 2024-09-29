@@ -35,11 +35,11 @@ export default function Footer({navItems}) {
                 })}
             </div>
             <div className={styles.contact}>
-                <p><span>+0123-456-789</span></p>
+                <p><span>+91 +91 93484039378</span></p>
                 <p><span>oliveorg@gmail.com</span></p>
-                <p>4517,Washington Ave,
-                <br />Manchester, Kentucky
-                <br />39495</p>
+                <p>Pavoochatram,
+                <br />Tenkasi,TamilNadu
+                <br />627811</p>
             </div>
         </div>
         <div className={styles.item}>

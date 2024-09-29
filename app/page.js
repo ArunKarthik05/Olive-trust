@@ -11,7 +11,7 @@ import Contact from '@/components/Contact-Us/Contact';
 import useIsMobile from '@/Hooks/IsMobile';
 
 export default function Home() {
-  const isMobile = useIsMobile;
+  const isMobile = useIsMobile();
   const navItems = [
     { name: "Home", link: "" },
     { name: "Get Involved", link: "" },
