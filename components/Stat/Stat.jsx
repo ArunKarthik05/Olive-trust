@@ -96,6 +96,7 @@ export default function Stat() {
                 </div>
                 <div className={styles.gridItem}>
                     {/* video1 */}
+                    <video src={missionsData.missions[activeMission].video} autoPlay loop muted controls></video>
                 </div>
 
                 {/* images */}
