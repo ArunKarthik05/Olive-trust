@@ -61,7 +61,6 @@ export default function Goals() {
           start: 'top 50%', // Animation starts when the top of the text is at 75% of the viewport height
           end: 'top 40%', // Animation ends when the top of the text is at 25% of the viewport height
           scrub: true,
-          markers:true
         },
       }
     );
