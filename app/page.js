@@ -54,26 +54,23 @@ export default function Home() {
 
 
     const handleDOMContentLoaded = () => {
-      // Create the cursor element once if not created
-      // cursor = document.querySelector(`.${styles.custom}`);
-      // if (!cursor) {
+
         const cursor = document.createElement('div');
-        // para = document.createElement('p');
-        // para.textContent = currentSection;
-        // para.classList.add(styles.currentDiv)
         cursor.classList.add(styles.custom);
-        // cursor.appendChild(para);
+        // set in center
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        cursor.style.left = `${centerX}px`;
+        cursor.style.top = `${centerY}px`;
+        // add to body
         document.body.appendChild(cursor);
-      // } else {
-      //   para = cursor.querySelector('p');
-      // }
 
       if (window.innerWidth > 576) {
         const smoothCursor = () => {
-          let mouseX = 0;
-          let mouseY = 0;
-          let cursorX = 0;
-          let cursorY = 0;
+          let mouseX = centerX; // Start at center
+          let mouseY = centerY; // Start at center
+          let cursorX = centerX;
+          let cursorY = centerY;
           const speed = 0.1;
 
           const update = () => {
@@ -119,31 +116,7 @@ export default function Home() {
       window.removeEventListener('resize', updateWindowSize);
     };
   }, [isMobile, windowSize]);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollPosition = window.scrollY + window.innerHeight / 2;
-  //     for (const key in refs) {
-  //       const ref = refs[key].current;
-  //       if (ref && ref.offsetTop <= scrollPosition && ref.offsetTop + ref.offsetHeight > scrollPosition) {
-  //         setCurrentSection(key);
-  //         const cursor = document.querySelector(`.${styles.custom}`);
-  //         const para = cursor ? cursor.querySelector(`${styles.currentDiv}`) : null;
-  //         if (para) {
-  //           para.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-  //         }
-  //         break;
-  //       }
-  //     }
-  //   };
-  
-  //   window.addEventListener('scroll', handleScroll);
-  
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-  
+ 
 
   return (
     <div className={styles.page}>

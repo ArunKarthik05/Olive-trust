@@ -20,17 +20,22 @@
         position: sticky;
         top: 15%;    
         z-index: 9;
+        @include respond-to(mobiles){
+            width: 100%;
+        }
    }
     .slanted{
         @extend .heading !optional;
         transform: rotate(-2deg);
         color: $color-primary;
+        background-color: white !important;
     }
     .heading{
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.6);
         padding: 1rem 0.5rem;
         width: fit-content;
         border-radius: .5rem;
+        border:1px solid gray;
     }
     .center {
         margin: auto;
@@ -39,12 +44,12 @@
         top: 50%;
         z-index: 99;
         // height: 50vh;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.6);
         border-radius: 1rem;
         @include respond-to(mobiles){
             width: 80%;
             position: sticky;
-            top: 45%;    
+            top: 55%;    
             z-index: 9;
         }
         p {
