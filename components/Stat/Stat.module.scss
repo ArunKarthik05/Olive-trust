@@ -80,6 +80,7 @@
     }
 
     .gridContainer {
+      box-sizing: border-box;
       scroll-snap-align: start;
       margin-top: 5vh;
       min-width: 100%;
@@ -88,10 +89,12 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
       grid-template-rows: 70vh 30vh; /* First row 60vh, second row 30vh */
-      gap: .5rem;
+      row-gap: 1rem;
+      column-gap: 1rem;
+      padding:1rem;
       border-radius: 1rem;
       @include respond-to(mobiles){
-        grid-template-rows: 50vh 30vh 90vh;
+        grid-template-rows: 50vh 30vh auto;
       }
     
       .gridItem {
@@ -100,7 +103,6 @@
         border-radius: 1rem;
         position: relative;
         @extend .imgContainer !optional;
-        margin: 0 1rem 1rem 1rem;
 
         .content{
           padding-top: 10%;

@@ -34,7 +34,9 @@ export default function Hero() {
               </div>
               <div className={styles.mainImgDiv}>
                   <div className={styles.grayContainer}></div>
-                  <div className={styles.img2}></div>
+                  <div className={styles.img2}>
+                    <p className={styles.content}>Every penny you donate will make a change to this world</p>
+                  </div>
               </div>
               <div className={styles.mainImgDiv}>
                   <div className={styles.img3}></div>
