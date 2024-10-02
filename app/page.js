@@ -12,6 +12,10 @@ import useIsMobile from '@/Hooks/IsMobile';
 import Missions from '@/components/Missions/Missions';
 
 export default function Home() {
+  const [activeIndex,setActiveIndex] = useState(0);
+  const handleActiveIndex =(i)=>{
+    setActiveIndex(i)  
+  }
   const isMobile = useIsMobile();
   const navItems = [
     { name: "Home", link: "hero" },
@@ -143,7 +147,7 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <Navbar navItems={navItems} refs={refs} />
+      <Navbar navItems={navItems} refs={refs} activeIndex={activeIndex} setActiveIndex={handleActiveIndex}/>
 
       <main>
         <section ref={heroRef}>
@@ -172,7 +176,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <Footer navItems={navItems} refs={refs} />
+        <Footer navItems={navItems} refs={refs} setActiveIndex={handleActiveIndex}/>
       </footer>
     </div>
   );

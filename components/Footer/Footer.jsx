@@ -1,10 +1,22 @@
 import React from 'react'
 import styles from "./Footer.module.scss";
 
-export default function Footer({navItems}) {
-    const handleClick = () =>{
+export default function Footer({navItems,refs,setActiveIndex}) {
 
-    }
+    const handleClick= (index,link)=>{
+        setActiveIndex(index)
+        const currentRef = refs[link].current;
+        console.log(currentRef)
+        if (currentRef) {
+          currentRef.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
+      const handleContact = ()=>{
+        if(refs["contact"].current)
+          refs["contact"].current.scrollIntoView({behavior:"smooth"})
+      }
+    
 
   return (
     <div className={styles.footer}>
@@ -30,7 +42,7 @@ export default function Footer({navItems}) {
             <div className={styles.itemsWrapper}>
                 {navItems.map((item,i)=>{
                     return(
-                        <p key={i} onClick={()=>handleClick(i)}>{item.name}</p>
+                        <p key={i} onClick={()=>handleClick(i,item.link)}>{item.name}</p>
                     )
                 })}
             </div>
@@ -43,7 +55,7 @@ export default function Footer({navItems}) {
             </div>
         </div>
         <div className={styles.item}>
-            <div className={styles.contactUs}>
+            <div className={styles.contactUs} onClick={handleContact}>
             <p>Contact Us</p>
             <div className={styles.svgContainer}>
                 <svg width="16px" height="12px" viewBox="0 0 16 12" fill="black">

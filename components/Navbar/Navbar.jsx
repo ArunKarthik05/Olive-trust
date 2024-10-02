@@ -3,9 +3,8 @@ import React, { useState } from 'react'
 import styles from "./Navbar.module.scss";
 import useIsMobile from '@/Hooks/IsMobile';
 
-export default function Navbar({navItems,refs}) {
+export default function Navbar({navItems,refs,activeIndex,setActiveIndex}) {
   const isMobile = useIsMobile();
-  const [activeIndex,setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
 
