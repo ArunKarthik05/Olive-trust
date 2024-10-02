@@ -23,11 +23,7 @@
     transform: translate(-50%, -50%); 
     transition: all 0.1s ease; 
     z-index: 9999;
-    @include respond-to(mobiles){
-        display: none;
-    }
-  }
-
-  .currentDiv{
-    color: red;
+    // @include respond-to(mobiles){
+    //     display: none;
+    // }
   }

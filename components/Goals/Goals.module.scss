@@ -3,7 +3,6 @@
 @import "/styles/mixins.scss";
 
 .goals{
-    background-color: $color-primary;
     margin-top: 10vh;
     text-align: center;
     position: sticky;
@@ -14,7 +13,7 @@
         align-items: center;
         flex-direction: column;
         position: sticky;
-        top: 15%;
+        top: 15%;    
         z-index: 9;
     }
     .slanted{
@@ -32,7 +31,12 @@
         top: 50%;
         z-index: 99;
         height: 50vh;
-    
+        @include respond-to(mobiles){
+            width: 80%;
+            position: sticky;
+            top: 45%;    
+            z-index: 9;
+        }
         p {
             border: 1px solid gray;
             padding: 1rem 2rem;
@@ -40,18 +44,26 @@
             background-color: white;
             color: black;
             line-height: 1.5;
+            background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            font-weight: bold;           
+            @include respond-to(mobiles){
+                width: fit-content;
+            }
         }
     }
      
 
-    .main{
-        margin-top: 1rem;
-        @extend .flexRow !optional;
-        justify-content: space-between;
-        align-items: center;
-        height: 300vh;
-        position: relative;
-    }
+    // .main{
+    //     margin-top: 1rem;
+    //     @extend .flexRow !optional;
+    //     justify-content: space-between;
+    //     align-items: center;
+    //     height: 300vh;
+    //     position: relative;
+    // }
+
     .imgContainer:nth-child(2){
         height: 400px;
         width: 300px;
@@ -60,6 +72,9 @@
         align-self: flex-start;
         position: sticky;
         top: 10%;
+        @include respond-to(mobiles){
+            display: none;
+        }
     }
     .imgContainer:nth-child(4){
         height: 500px;
@@ -69,10 +84,16 @@
         align-self: flex-end;
         position: sticky;
         left: 90%;
-        top: 90%;
+        top: 100%;
+        @include respond-to(mobiles){
+            display: none;
+        }
     }
 }
 .scroll{
     z-index :999;
-    // height: 300vh;
+    min-height: 500vh;
+    @include respond-to(mobiles){
+        min-height: 400vh;
+    }
 }

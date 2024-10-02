@@ -77,7 +77,7 @@ export default function Navbar({navItems,refs}) {
                 )
               })}
             </div>
-            <div className={styles.contactUs} onClick={handleContact}>
+            <div className={styles.contactUs}>
               <p>Contact Us</p>
               <div className={styles.svgContainer}>
                 <svg width="16px" height="12px" viewBox="0 0 16 12" fill="black">

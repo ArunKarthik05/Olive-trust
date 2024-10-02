@@ -4,10 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from "./Goals.module.scss";
 import VideoBackground from '../VideoScroll/Video';
 import Image from 'next/image';
-
+import useIsMobile from '@/Hooks/IsMobile';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Goals() {
+  const IsMobile = useIsMobile()
   const goalsRef = useRef(null);
   const leftImgRef = useRef(null); // Ref for left imgContainer
   const rightImgRef = useRef(null); // Ref for right imgContainer
@@ -82,21 +83,25 @@ export default function Goals() {
           <h1 className={`${styles.heading} ${styles.slanted}`}>HEALTH CARE</h1>
         </div>
 
-        {/* <div className={styles.main}> */}
-          <div ref={leftImgRef} className={styles.imgContainer}>
-            <Image src="/assets/hospital.png" alt="hospital-image-1" height={400} width={300}/>  
-          </div> 
+          {!IsMobile &&
+            <div ref={leftImgRef} className={styles.imgContainer}>
+              <Image src="/assets/hospital.png" alt="hospital-image-1" height={400} width={300}/>  
+            </div> 
+          }
           <div className={styles.center} >
-            <p ref={textRef}>Our vision is to establish a dedicated hospital that offers accessible and affordable healthcare for all.
-              We aim to create a nurturing environment where patients receive compassionate care and innovative treatments. By collaborating with healthcare professionals and community leaders, we strive to address the pressing health needs of underserved populations.
-              Together, we can build a healthier future for our community.
+            <p ref={textRef}>"Our goal is to build a hospital that provides quality, affordable healthcare to those in need.
+            We&apos;re committed to creating a healthier future through compassionate care and innovation."
             </p>
           </div>
-          <div ref={rightImgRef} className={styles.imgContainer}>
-            <Image src="/assets/hospital-1.png" alt="hospital-image-2" height={400} width={300}/>  
-          </div> 
+
+
+          {!IsMobile &&
+            <div ref={rightImgRef} className={styles.imgContainer}>
+              <Image src="/assets/hospital-1.png" alt="hospital-image-2" height={400} width={300}/>  
+            </div> 
+          }
         </div>
-      {/* </div> */}
+
     </div>
   )
 }

@@ -3,8 +3,10 @@ import React, { useRef,useState } from 'react'
 import styles from "../Stat/Stat.module.scss";
 import { missionsData } from '@/data/Missions';
 import Image from 'next/image';
+import useIsMobile from '@/Hooks/IsMobile';
 
 export default function Missions() {
+    const IsMobile = useIsMobile();
     const missionRefs = useRef([]);
     const [activeMission,setActiveMission] = useState(0);
     const scrollContainer = useRef(null)
@@ -12,7 +14,11 @@ export default function Missions() {
 
     const handleNext = () => {
         if (activeMission < missionsData.missions.length - 1) {
+            if(IsMobile){
+                scrollContainer.current.scrollBy({ left: 300, behavior: 'smooth' });
+            }else{
             scrollContainer.current.scrollBy({ left: 1200, behavior: 'smooth' });
+            }
             setActiveMission(activeMission + 1);
         }
     };

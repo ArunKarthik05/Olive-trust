@@ -47,24 +47,24 @@ export default function Home() {
 
     window.addEventListener('resize', updateWindowSize);
 
-    let cursor, para;
+
 
     const handleDOMContentLoaded = () => {
       // Create the cursor element once if not created
-      cursor = document.querySelector(`.${styles.custom}`);
-      if (!cursor) {
-        cursor = document.createElement('div');
+      // cursor = document.querySelector(`.${styles.custom}`);
+      // if (!cursor) {
+        const cursor = document.createElement('div');
         // para = document.createElement('p');
         // para.textContent = currentSection;
         // para.classList.add(styles.currentDiv)
         cursor.classList.add(styles.custom);
         // cursor.appendChild(para);
         document.body.appendChild(cursor);
-      } else {
-        para = cursor.querySelector('p');
-      }
+      // } else {
+      //   para = cursor.querySelector('p');
+      // }
 
-      if (windowSize.width > 576) {
+      if (!isMobile) {
         const smoothCursor = () => {
           let mouseX = 0;
           let mouseY = 0;
