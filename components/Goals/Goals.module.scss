@@ -10,18 +10,26 @@
 
     .healthcare{
         display: flex;
+        flex-direction: row;
         align-items: center;
-        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap:1rem;
+        width: 60%;
+        margin: auto;
         position: sticky;
         top: 15%;    
         z-index: 9;
-    }
+   }
     .slanted{
-        background-color: white;
+        @extend .heading !optional;
+        transform: rotate(-2deg);
         color: $color-primary;
+    }
+    .heading{
+        background-color: white;
         padding: 1rem 0.5rem;
         width: fit-content;
-        transform: rotate(-2deg);
         border-radius: .5rem;
     }
     .center {
@@ -30,7 +38,9 @@
         position: sticky;
         top: 50%;
         z-index: 99;
-        height: 50vh;
+        // height: 50vh;
+        background-color: white;
+        border-radius: 1rem;
         @include respond-to(mobiles){
             width: 80%;
             position: sticky;
@@ -38,16 +48,14 @@
             z-index: 9;
         }
         p {
-            border: 1px solid gray;
             padding: 1rem 2rem;
-            border-radius: 1rem;
-            background-color: white;
             color: black;
             line-height: 1.5;
             background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; 
             font-weight: bold;           
+
             @include respond-to(mobiles){
                 width: fit-content;
             }
@@ -72,6 +80,7 @@
         align-self: flex-start;
         position: sticky;
         top: 10%;
+        border: 2px solid $color-primary;
         @include respond-to(mobiles){
             display: none;
         }

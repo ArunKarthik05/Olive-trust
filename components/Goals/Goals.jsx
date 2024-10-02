@@ -8,6 +8,7 @@ import useIsMobile from '@/Hooks/IsMobile';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Goals() {
+  const words = ["A","VISION","FOR","PROVIDING","BETTER","HEALTHCARE"]
   const IsMobile = useIsMobile()
   const goalsRef = useRef(null);
   const leftImgRef = useRef(null); // Ref for left imgContainer
@@ -77,29 +78,35 @@ export default function Goals() {
       <VideoBackground/>
       <div className={styles.scroll}>
         <div className={styles.healthcare}>
-          <h1 className={styles.heading}>THIS IS A VISION FOR PROVIDING
+          {words.map((word,i)=>(
+            <>
+            <h1 key={i} className={`${styles.heading} ${i === words.length-1 ? styles.slanted : ""}`}>{word}</h1>
+            </>
+          ))
+          }
+          {/* <h1 className={styles.heading}>THIS IS A VISION FOR PROVIDING
             <br />BETTER
           </h1>
-          <h1 className={`${styles.heading} ${styles.slanted}`}>HEALTH CARE</h1>
+          <h1 className={`${styles.heading} ${styles.slanted}`}>HEALTH CARE</h1> */}
         </div>
 
-          {!IsMobile &&
+          {/* {!IsMobile &&
             <div ref={leftImgRef} className={styles.imgContainer}>
               <Image src="/assets/hospital.png" alt="hospital-image-1" height={400} width={300}/>  
             </div> 
-          }
-          <div className={styles.center} >
-            <p ref={textRef}>&quot;Our goal is to build a hospital that provides quality, affordable healthcare to those in need.
+          } */}
+          <div className={styles.center} ref={textRef}>
+            <p>&quot;Our goal is to build a hospital that provides quality, affordable healthcare to those in need.
             We&apos;re committed to creating a healthier future through compassionate care and innovation.&quot;
             </p>
           </div>
 
 
-          {!IsMobile &&
+          {/* {!IsMobile &&
             <div ref={rightImgRef} className={styles.imgContainer}>
               <Image src="/assets/hospital-1.png" alt="hospital-image-2" height={400} width={300}/>  
             </div> 
-          }
+          } */}
         </div>
 
     </div>
