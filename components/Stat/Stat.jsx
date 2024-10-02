@@ -61,6 +61,19 @@ export default function Stat() {
             {missionsData.missions.map((item,i)=>(
             <div className={styles.gridContainer} key={i} ref={(el) => (missionRefs.current[i] = el)}>
                 <div className={styles.gridItem}>
+                    {/* heading */}
+                    <h2 className={styles.subHeading}>Mission</h2> 
+
+
+                    {/* 3linecontent */}
+                    <p className={styles.content}>{item.content}</p>
+
+
+                    <div className={styles.allmissions}>
+                        {missionsData.allmissions.map((mission,index)=>(
+                            <div className={`${activeMission === index ? styles.active : ''} ${styles.mission}`} key={index}><p>{mission}</p></div>
+                        ))}
+                    </div>
 
                 {/* buttons */}
                 <div className={styles.buttons}>
@@ -81,21 +94,9 @@ export default function Stat() {
                         </button>
                     </div>
 
-                    {/* heading */}
-                    <h2 className={styles.subHeading}>Mission</h2> 
-
-
-                    {/* 3linecontent */}
-                    <p className={styles.content}>{item.content}</p>
-
-
-                    <div className={styles.allmissions}>
-                        {missionsData.allmissions.map((mission,index)=>(
-                            <div className={`${activeMission === index ? styles.active : ''} ${styles.mission}`} key={index}><p>{mission}</p></div>
-                        ))}
-                    </div>
-
                 </div>
+
+
                 <div className={styles.gridItem}>
                     {/* video1 */}
                     <video className={styles.video} src={missionsData.missions[activeMission].video} autoPlay loop muted controls></video>

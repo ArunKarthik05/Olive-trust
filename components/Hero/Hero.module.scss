@@ -29,15 +29,18 @@
     }
 
     .imagesDiv{
-        // margin: 0 5vw;
         min-height: 60vh;
         @extend .flexRow !optional;
         justify-content: space-between;
         @include respond-to(mobiles){
             min-height: 30vh;
             gap:2vw;
-
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: auto auto;
+            margin-top: 1rem;
         }
+
         .mainImgDiv{
             height: 60vh;
             width: 20%;
@@ -47,9 +50,40 @@
             justify-content: flex-end;
 
             @include respond-to(mobiles){
-                height: 30vh;
-                width: 24vw;
+                height: auto;
+                width: 100%;
                 border-radius: 1px;
+            }
+
+            .svgStyles2{
+                height:80%;
+                position: relative;
+                .smile{
+                    position: absolute;
+                    right: 0;
+                    top: 10%;
+                }
+            }
+
+            .svgStyles{
+                height: 80%;
+                position: relative;
+                .leftShine{
+                    position: absolute;
+                    top: -25px;
+                    left: -25px;
+                }
+                .star{
+                    position: absolute;
+                    right: -30px;
+                    top: 5%;
+                    z-index: 9;
+                    @include respond-to(mobiles){
+                        height: 22px;
+                        width: 22px;
+                        right: -10px;
+                    }
+                }
             }
             .greenDiv{
                 background-color: $color-light-green;
@@ -59,9 +93,30 @@
                     border-radius: 1rem !important;
                 }
             }
+
+            .innercontent{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                p{
+                    padding: 0 1rem;
+                    align-self: flex-end;
+                    @include respond-to(mobiles){
+                        padding: 1rem .5rem;
+                    }
+                }
+                font-weight: 500;
+                line-height: 1.5;
+                align-self: flex-end;
+                @include respond-to(mobiles){
+                    font-size: 14px;
+                }
+            }
+
             .img1{
                 @extend .greenDiv !optional;
-                height: 80%;
+                height: 100%;
             }
             .img2{
                 @extend .greenDiv !optional;
@@ -71,10 +126,15 @@
             .img3{
                 @extend .greenDiv !optional;
                 height: 60%;
+                @extend .flexCol !optional;
+                @extend .innercontent !optional;
+                h3{
+                    padding-bottom: .5rem;
+                }
             }
             .img4{
                 @extend .greenDiv !optional;
-                height: 80%;
+                height: 100%;
                 display: flex;
                 justify-content: center;
                 img{
@@ -85,15 +145,25 @@
             }
             &:nth-child(1){
                 align-self: flex-end;
+                @include respond-to(mobiles){
+                    grid-column-start: 1/2;
+                    grid-row-start: 1;
+                }
             }
             &:nth-child(2){
                 align-self: flex-end;
+                @include respond-to(mobiles){
+                    align-self: center;
+                }
             }
             &:nth-child(3){
                 align-self: center;
             }
             &:nth-child(4){
                 align-self: flex-start;
+                @include respond-to(mobiles){
+                    align-self: center;
+                }
             }
 
         }
@@ -104,7 +174,12 @@
             border-radius: 3rem;
             @include respond-to(mobiles){
                 height: 30px;
+                padding: .4rem 0;
             }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
         }
     }
 }

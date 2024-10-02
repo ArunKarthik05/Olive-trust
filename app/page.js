@@ -26,7 +26,7 @@ export default function Home() {
       cursor.classList.add(styles.custom); 
       document.body.appendChild(cursor);
 
-      if( !isMobile){
+      if(!isMobile){
         const smoothCursor = () => {
           let mouseX = 0;
           let mouseY = 0;
@@ -91,9 +91,9 @@ export default function Home() {
         <section>
           <Stat />
         </section>
-        <section>
+        {/* <section>
           <Goals />
-        </section>
+        </section> */}
         <section>
           <Contact/>
         </section>

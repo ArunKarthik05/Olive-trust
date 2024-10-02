@@ -16,6 +16,8 @@
         display: flex;
         flex-direction: column;
         margin: 0 5vw;
+        padding: 1rem .5rem;
+        border-radius: 1rem
     }
 
     .item{
@@ -38,7 +40,9 @@
         @include respond-to(medium){
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+            gap: .5rem;
+            margin: auto;
         }
         p{
             position: relative;

@@ -6,7 +6,7 @@
         min-height: 100vh;
         margin: 0 5vw 20vh 5vw;
         @include respond-to(mobiles){
-            margin: 0 1vw 20vh 1vw;
+            margin: 0 1rem 20vh 1rem;
         }
     }
 }
