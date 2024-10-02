@@ -59,7 +59,7 @@
         @include respond-to(mobiles){
             width: 80%;
             position: sticky;
-            top: 55%;    
+            top: 75%;    
             z-index: 9;
         }
         p {
@@ -78,41 +78,6 @@
     }
      
 
-    // .main{
-    //     margin-top: 1rem;
-    //     @extend .flexRow !optional;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     height: 300vh;
-    //     position: relative;
-    // }
-
-    .imgContainer:nth-child(2){
-        height: 400px;
-        width: 300px;
-        border-top-right-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        align-self: flex-start;
-        position: sticky;
-        top: 10%;
-        border: 2px solid $color-primary;
-        @include respond-to(mobiles){
-            display: none;
-        }
-    }
-    .imgContainer:nth-child(4){
-        height: 500px;
-        width: 400px;
-        border-top-left-radius: 2rem;
-        border-bottom-left-radius: 2rem;
-        align-self: flex-end;
-        position: sticky;
-        left: 90%;
-        top: 100%;
-        @include respond-to(mobiles){
-            display: none;
-        }
-    }
 }
 .scroll{
     z-index :999;
