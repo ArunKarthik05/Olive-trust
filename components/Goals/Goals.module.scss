@@ -101,7 +101,7 @@
 }
 .scroll{
     z-index :999;
-    min-height: 500vh;
+    min-height: 300vh;
     @include respond-to(mobiles){
         min-height: 200vh;
     }
