@@ -64,7 +64,7 @@ export default function Home() {
       //   para = cursor.querySelector('p');
       // }
 
-      if (!isMobile) {
+      if (window.innerWidth > 576) {
         const smoothCursor = () => {
           let mouseX = 0;
           let mouseY = 0;
@@ -147,7 +147,7 @@ export default function Home() {
 
       <main>
         <section ref={heroRef}>
-          <Hero />
+          <Hero refs={refs}/>
         </section>
 
         <div ref={statRef}>

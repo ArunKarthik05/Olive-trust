@@ -94,6 +94,6 @@
     z-index :999;
     min-height: 500vh;
     @include respond-to(mobiles){
-        min-height: 400vh;
+        min-height: 200vh;
     }
 }

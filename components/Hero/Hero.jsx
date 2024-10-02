@@ -2,7 +2,11 @@ import React from 'react'
 import styles from "./Hero.module.scss";
 import Image from 'next/image';
 
-export default function Hero() {
+export default function Hero({refs}) {
+  const handleDonate = () =>{
+    if(refs["contact"].current)
+      refs["contact"].current.scrollIntoView({behavior:"smooth"})
+  }
   return (
     <div className={styles.main}>
           <div className={styles.content}>
@@ -11,7 +15,7 @@ export default function Hero() {
                 <br />beings are given the wings to soar high and achieve their dreams.
               </p>
               <div>
-                <button className={styles.donateBtn}>Donate Now
+                <button className={styles.donateBtn} onClick={handleDonate}>Donate Now
                     <div className={styles.svgContainer}>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1.34312 12.6569L12.6568 1.34317M12.6568 1.34317V9.82845M12.6568 1.34317H4.17154" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

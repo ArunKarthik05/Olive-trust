@@ -47,6 +47,9 @@ const VideoBackground = () => {
         type="video/mp4"
         muted
         loop 
+        playsInline
+        disablePictureInPicture
+        style={{ pointerEvents: 'none' }} 
       />
     </>
   );

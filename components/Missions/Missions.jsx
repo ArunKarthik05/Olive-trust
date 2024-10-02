@@ -83,7 +83,11 @@ export default function Missions() {
 
                 <div className={styles.gridItem}>
                     {/* video1 */}
-                    <video className={styles.video} src={missionsData.missions[activeMission].video} autoPlay loop muted controls></video>
+                    <video className={styles.video} src={missionsData.missions[activeMission].video} 
+                    autoPlay loop muted playsInline
+                    disablePictureInPicture
+                    style={{ pointerEvents: 'none' }} 
+                    ></video>
                 </div>
 
                 {/* images */}
