@@ -21,3 +21,26 @@ body {
     cursor: auto; /* Show the cursor on mobile */
   }
 }
+
+/* For Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: black; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(178,255,118); /* Scrollbar color */
+  border-radius: 10px; /* Optional: Rounding the scroller */
+  border: 2px solid black; /* Optional: Create space around the scroller */
+}
+/* For Firefox */
+html {
+  scrollbar-width:thin;
+  padding: 5px;
+  border-radius: 5px;
+  scrollbar-color: rgb(178,255,118) black; /* scroller color and background */
+}
+

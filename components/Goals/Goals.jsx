@@ -89,8 +89,8 @@ export default function Goals() {
             </div> 
           }
           <div className={styles.center} >
-            <p ref={textRef}>"Our goal is to build a hospital that provides quality, affordable healthcare to those in need.
-            We&apos;re committed to creating a healthier future through compassionate care and innovation."
+            <p ref={textRef}>&quot;Our goal is to build a hospital that provides quality, affordable healthcare to those in need.
+            We&apos;re committed to creating a healthier future through compassionate care and innovation.&quot;
             </p>
           </div>
 
