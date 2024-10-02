@@ -3,103 +3,76 @@
 @import "/styles/mixins.scss";
 
 .goals{
-    .upperContent{
-        width: 70vw;
+    background-color: $color-primary;
+    margin-top: 10vh;
+    text-align: center;
+    position: sticky;
+    top: 0;
+
+    .healthcare{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: sticky;
+        top: 15%;
+        z-index: 9;
+    }
+    .slanted{
+        background-color: white;
+        color: $color-primary;
+        padding: 1rem 0.5rem;
+        width: fit-content;
+        transform: rotate(-2deg);
+        border-radius: .5rem;
+    }
+    .center {
         margin: auto;
-        position: relative;
-        .bottom{
-            width: 80%;
-            position: absolute;
-            bottom: 0;
-            left:7%;
-            z-index: 99;
-            background-color: rgba(255, 255, 255, 0.5);
+        width: 40vw;
+        position: sticky;
+        top: 50%;
+        z-index: 99;
+        height: 50vh;
+    
+        p {
+            border: 1px solid gray;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            background-color: white;
             color: black;
-            backdrop-filter: blur(2px);
-            padding: 1rem;
-            border-top-right-radius: 1rem;
-            border-top-left-radius: 1rem;
-            text-align: center;
-            h1{
-                padding-bottom: 1rem;
-            }
-            p{
-                width: 90%;
-                text-align: center;
-                margin: auto;
-                line-height: 1.5;
-                span{
-                    color: red;
-                }
-            }
+            line-height: 1.5;
         }
     }
-    .scrollContainer{
-        @extend .flexRow !optional;
-        gap: 10vw;
-        height: 70vh;
-        border-radius: 3rem;
-        overflow-x: hidden;
-        overflow-y: auto;
-        scroll-snap-type: x mandatory;
+     
 
-        .imgContainer{
-            scroll-snap-align: start;
-            height: 100%;
-            min-width: 100%;
-            img{
-                // object-position: center 30%;
-               object-fit: cover; 
-            }
-            @include respond-to(mobiles){
-                margin: auto;
-            }
-        }
-        .imgContainer:nth-child(2){
-            img{
-                object-position: center 40%;
-            }
-        }
-    }
-
-    .hospital{
-        margin-top: 20vh;
+    .main{
+        margin-top: 1rem;
         @extend .flexRow !optional;
         justify-content: space-between;
-        @include respond-to(mobiles){
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .content{
-            width: 50%;
-            @extend .flexCol !optional;
-            align-items: center;
-            @include respond-to(mobiles){
-                width: 90%;
-                padding: 0 1rem;
-            }
-            h1{
-                text-align: center;
-            }
-            p{
-                margin: auto;
-                line-height: 2;
-            }
-        }
-
-        .imgContainer{
-            height: 60vh;
-            width: 500px;
-            border-radius: 1rem;
-            @include respond-to(mobiles){
-                width: 80vw;
-            }
-        }
-        .donateBtn{
-            @extend .iconBtn !optional;
-            width: fit-content;
-        }
+        align-items: center;
+        height: 300vh;
+        position: relative;
     }
+    .imgContainer:nth-child(2){
+        height: 400px;
+        width: 300px;
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        align-self: flex-start;
+        position: sticky;
+        top: 10%;
+    }
+    .imgContainer:nth-child(4){
+        height: 500px;
+        width: 400px;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        align-self: flex-end;
+        position: sticky;
+        left: 90%;
+        top: 90%;
+    }
+}
+.scroll{
+    z-index :999;
+    // height: 300vh;
 }

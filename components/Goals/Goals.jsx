@@ -1,64 +1,103 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from "./Goals.module.scss";
+import VideoBackground from '../VideoScroll/Video';
 import Image from 'next/image';
 
-export default function Goals() {
-  const images = ["hospital-1.png","hospital-2.jpeg","college-1.png","college-2.png"]
-  const [activeContainer, setActiveContainer] = useState(0); 
-  const scrollContainer = useRef(null);
+gsap.registerPlugin(ScrollTrigger);
 
-  const handleNext = () => {
-    if (activeContainer < 3 ) {
-        scrollContainer.current.scrollBy({ left: 1000, behavior: 'smooth' });
-        setActiveContainer(activeContainer + 1);
-    }else{
-        setTimeout(() => {
-            scrollContainer.current.scrollTo({ left: 0, behavior: 'auto' }); 
-            setActiveContainer(0);
-        }, 500);
-    }
-};
+export default function Goals() {
+  const goalsRef = useRef(null);
+  const leftImgRef = useRef(null); // Ref for left imgContainer
+  const rightImgRef = useRef(null); // Ref for right imgContainer
+  const textRef = useRef(null); // Ref for text container
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-        handleNext();
-    }, 5000); 
+    const leftImg = leftImgRef.current;
+    const rightImg = rightImgRef.current;
+    const text = textRef.current;
 
-    return () => clearInterval(intervalId);
-  }, [activeContainer]); 
+    // GSAP animation for left image
+    gsap.fromTo(leftImg, 
+      { x: -500, opacity: 0 }, // Initial state
+      {
+        x: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: leftImg,
+          start: 'top 75%', // Animation starts when the top of the imgContainer is at 75% of the viewport height
+          end: 'top 25%', // Animation ends when the top of the imgContainer is at 25% of the viewport height
+          scrub: true,
+          delay: 0.2, // Add delay to the left image animation
+        },
+      }
+    );
+
+    // GSAP animation for right image
+    gsap.fromTo(rightImg,
+      { x: 200, opacity: 0 }, // Initial state
+      {
+        x: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: rightImg,
+          start: 'top 75%', 
+          end: 'top 25%', 
+          scrub: true,
+          // markers: true
+        },
+      }
+    );
+
+    // GSAP animation for text
+    gsap.fromTo(text, 
+      { y: 50, opacity: 0 }, // Initial state
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: text,
+          start: 'top 50%', // Animation starts when the top of the text is at 75% of the viewport height
+          end: 'top 40%', // Animation ends when the top of the text is at 25% of the viewport height
+          scrub: true,
+          markers:true
+        },
+      }
+    );
+
+    return () => {
+      // Cleanup GSAP animations on unmount
+      // ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   return (
-    <div className={styles.goals}>
-      <div className={styles.upperContent}>
-        <div className={styles.scrollContainer} ref={scrollContainer}>
-          {images.map((img,i)=>(
-          <div className={styles.imgContainer} key={i}>
-            <Image src={`/assets/${img}`} alt={img} height={75} width={828}/> 
-          </div>
-          ))}
-          {/* <div className={styles.item}></div> */}
+    <div ref={goalsRef} className={styles.goals}>
+      <VideoBackground/>
+      <div className={styles.scroll}>
+        <div className={styles.healthcare}>
+          <h1 className={styles.heading}>THIS IS A VISION FOR PROVIDING
+            <br />BETTER
+          </h1>
+          <h1 className={`${styles.heading} ${styles.slanted}`}>HEALTH CARE</h1>
         </div>
-        <div className={styles.bottom}>
-            <h1 className={styles.heading}>Goals and Objectives</h1>
-            <p>At Olive Org, Our Goals and objectives for the upcoming years for the well being for every living being by
-            providing <span>Healthcare</span> and <span>Education</span>. We are in the mission to build a brighter future.</p>
-        </div>
-      </div>
 
-      <div className={styles.hospital}>
-        <div className={styles.content}>
-          <h1 className={styles.subHeading}>Our Vision for HealthCare</h1>
-          <p>At Olive charity trust, we are committed to transforming healthcare access for rural and underserved communities. Our mission is to build a fully-equipped hospital in rural areas, where quality medical care is often unavailable. This hospital will provide essential healthcare services, including maternal care, emergency treatment, and preventive health programs, ensuring that even the most marginalized have access to life-saving treatments. We believe that good health is a fundamental right, and through this initiative, we strive to bridge the healthcare gap for the poor. Join us in creating a healthier, more equitable future for all.</p>
-          <button className={styles.donateBtn}>Donate Now
-            <div className={styles.svgContainer}>
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.34312 12.6569L12.6568 1.34317M12.6568 1.34317V9.82845M12.6568 1.34317H4.17154" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-        </button>
+        {/* <div className={styles.main}> */}
+          <div ref={leftImgRef} className={styles.imgContainer}>
+            <Image src="/assets/hospital.png" alt="hospital-image-1" height={400} width={300}/>  
+          </div> 
+          <div className={styles.center} >
+            <p ref={textRef}>Our vision is to establish a dedicated hospital that offers accessible and affordable healthcare for all.
+              We aim to create a nurturing environment where patients receive compassionate care and innovative treatments. By collaborating with healthcare professionals and community leaders, we strive to address the pressing health needs of underserved populations.
+              Together, we can build a healthier future for our community.
+            </p>
+          </div>
+          <div ref={rightImgRef} className={styles.imgContainer}>
+            <Image src="/assets/hospital-1.png" alt="hospital-image-2" height={400} width={300}/>  
+          </div> 
         </div>
-        <div className={styles.imgContainer}><Image src="/assets/hospital.png" alt='hospital-interior' height={500} width={828}/></div>
-      </div>
+      {/* </div> */}
     </div>
   )
 }
