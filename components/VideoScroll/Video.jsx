@@ -46,7 +46,7 @@ const VideoBackground = () => {
         src="/vids/bg.mp4"
         type="video/mp4"
         muted
-        loop // Optional: loop the video
+        loop 
       />
     </>
   );

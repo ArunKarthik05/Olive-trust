@@ -68,6 +68,9 @@
         width: fit-content;
         border-radius: 3rem;
         margin: auto;
+        @include respond-to(mobiles){
+          border-radius: 1rem
+        }
     }
 
     .gridWrapper{
