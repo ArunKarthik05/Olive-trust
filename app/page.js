@@ -55,9 +55,11 @@ export default function Home() {
 
     const handleDOMContentLoaded = () => {
 
+      if (window.innerWidth > 576) {
         const cursor = document.createElement('div');
         cursor.classList.add(styles.custom);
         // set in center
+        console.log(window.innerWidth);
         const centerX = window.innerWidth / 2;
         const centerY = window.innerHeight / 2;
         cursor.style.left = `${centerX}px`;
@@ -65,7 +67,7 @@ export default function Home() {
         // add to body
         document.body.appendChild(cursor);
 
-      if (window.innerWidth > 576) {
+        
         const smoothCursor = () => {
           let mouseX = centerX; // Start at center
           let mouseY = centerY; // Start at center
