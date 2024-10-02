@@ -38,6 +38,8 @@
         align-items: center;
         @include respond-to(mobiles){
             background-color: transparent;
+            height: 30px;
+            width: 30px;
         }
     }
 
