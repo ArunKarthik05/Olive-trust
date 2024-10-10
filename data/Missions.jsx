@@ -7,7 +7,7 @@ export const missionsData = {
       images: ["/Medical/medicals-1.jpeg", "/Medical/medicals-2.jpeg", "/Medical/medicals-3.jpeg", "/Medical/medicals-4.jpeg"]
     },
     {
-      mission: "Annatham",
+      mission: "Food Service",
       content: "Offering nutritious meals to the underprivileged, striving to eradicate hunger and promote well-being among the poor in our society.",
       video: "/vids/food-2.mp4",
       images: ["/Food&Shelter/annadana.jpg", "/Food&Shelter/annadana2.jpeg", "/Food&Shelter/annadana3.jpeg", "/Food&Shelter/annadana4.jpeg"]
@@ -27,7 +27,7 @@ export const missionsData = {
   ],
   allmissions: [
     "Medical Camps",
-    "Annatham",
+    "Food Service",
     "Shelter for Tribal Communities",
     "Food and Clothing"
   ]
